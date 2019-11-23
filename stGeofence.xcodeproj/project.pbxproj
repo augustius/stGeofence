@@ -1,0 +1,491 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		270C01C723893A49006C2C51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270C01C623893A49006C2C51 /* AppDelegate.swift */; };
+		270C01C923893A49006C2C51 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270C01C823893A49006C2C51 /* SceneDelegate.swift */; };
+		270C01CB23893A49006C2C51 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270C01CA23893A49006C2C51 /* ViewController.swift */; };
+		270C01CE23893A49006C2C51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 270C01CC23893A49006C2C51 /* Main.storyboard */; };
+		270C01D123893A49006C2C51 /* stGeofence.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 270C01CF23893A49006C2C51 /* stGeofence.xcdatamodeld */; };
+		270C01D323893A4A006C2C51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 270C01D223893A4A006C2C51 /* Assets.xcassets */; };
+		270C01D623893A4A006C2C51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 270C01D423893A4A006C2C51 /* LaunchScreen.storyboard */; };
+		270C01E123893A4B006C2C51 /* stGeofenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270C01E023893A4B006C2C51 /* stGeofenceTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		270C01DD23893A4B006C2C51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 270C01BB23893A49006C2C51 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 270C01C223893A49006C2C51;
+			remoteInfo = stGeofence;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		270C01C323893A49006C2C51 /* stGeofence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stGeofence.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		270C01C623893A49006C2C51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		270C01C823893A49006C2C51 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		270C01CA23893A49006C2C51 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		270C01CD23893A49006C2C51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		270C01D023893A49006C2C51 /* stGeofence.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = stGeofence.xcdatamodel; sourceTree = "<group>"; };
+		270C01D223893A4A006C2C51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		270C01D523893A4A006C2C51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		270C01D723893A4A006C2C51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		270C01DC23893A4B006C2C51 /* stGeofenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = stGeofenceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		270C01E023893A4B006C2C51 /* stGeofenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stGeofenceTests.swift; sourceTree = "<group>"; };
+		270C01E223893A4B006C2C51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		270C01C023893A49006C2C51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		270C01D923893A4B006C2C51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		270C01BA23893A49006C2C51 = {
+			isa = PBXGroup;
+			children = (
+				270C01C523893A49006C2C51 /* stGeofence */,
+				270C01DF23893A4B006C2C51 /* stGeofenceTests */,
+				270C01C423893A49006C2C51 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		270C01C423893A49006C2C51 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				270C01C323893A49006C2C51 /* stGeofence.app */,
+				270C01DC23893A4B006C2C51 /* stGeofenceTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		270C01C523893A49006C2C51 /* stGeofence */ = {
+			isa = PBXGroup;
+			children = (
+				270C01C623893A49006C2C51 /* AppDelegate.swift */,
+				270C01C823893A49006C2C51 /* SceneDelegate.swift */,
+				270C01CA23893A49006C2C51 /* ViewController.swift */,
+				270C01CC23893A49006C2C51 /* Main.storyboard */,
+				270C01D223893A4A006C2C51 /* Assets.xcassets */,
+				270C01D423893A4A006C2C51 /* LaunchScreen.storyboard */,
+				270C01D723893A4A006C2C51 /* Info.plist */,
+				270C01CF23893A49006C2C51 /* stGeofence.xcdatamodeld */,
+			);
+			path = stGeofence;
+			sourceTree = "<group>";
+		};
+		270C01DF23893A4B006C2C51 /* stGeofenceTests */ = {
+			isa = PBXGroup;
+			children = (
+				270C01E023893A4B006C2C51 /* stGeofenceTests.swift */,
+				270C01E223893A4B006C2C51 /* Info.plist */,
+			);
+			path = stGeofenceTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		270C01C223893A49006C2C51 /* stGeofence */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 270C01E523893A4B006C2C51 /* Build configuration list for PBXNativeTarget "stGeofence" */;
+			buildPhases = (
+				270C01BF23893A49006C2C51 /* Sources */,
+				270C01C023893A49006C2C51 /* Frameworks */,
+				270C01C123893A49006C2C51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = stGeofence;
+			productName = stGeofence;
+			productReference = 270C01C323893A49006C2C51 /* stGeofence.app */;
+			productType = "com.apple.product-type.application";
+		};
+		270C01DB23893A4B006C2C51 /* stGeofenceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 270C01E823893A4B006C2C51 /* Build configuration list for PBXNativeTarget "stGeofenceTests" */;
+			buildPhases = (
+				270C01D823893A4B006C2C51 /* Sources */,
+				270C01D923893A4B006C2C51 /* Frameworks */,
+				270C01DA23893A4B006C2C51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				270C01DE23893A4B006C2C51 /* PBXTargetDependency */,
+			);
+			name = stGeofenceTests;
+			productName = stGeofenceTests;
+			productReference = 270C01DC23893A4B006C2C51 /* stGeofenceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		270C01BB23893A49006C2C51 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = august;
+				TargetAttributes = {
+					270C01C223893A49006C2C51 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					270C01DB23893A4B006C2C51 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 270C01C223893A49006C2C51;
+					};
+				};
+			};
+			buildConfigurationList = 270C01BE23893A49006C2C51 /* Build configuration list for PBXProject "stGeofence" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 270C01BA23893A49006C2C51;
+			productRefGroup = 270C01C423893A49006C2C51 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				270C01C223893A49006C2C51 /* stGeofence */,
+				270C01DB23893A4B006C2C51 /* stGeofenceTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		270C01C123893A49006C2C51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				270C01D623893A4A006C2C51 /* LaunchScreen.storyboard in Resources */,
+				270C01D323893A4A006C2C51 /* Assets.xcassets in Resources */,
+				270C01CE23893A49006C2C51 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		270C01DA23893A4B006C2C51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		270C01BF23893A49006C2C51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				270C01CB23893A49006C2C51 /* ViewController.swift in Sources */,
+				270C01C723893A49006C2C51 /* AppDelegate.swift in Sources */,
+				270C01D123893A49006C2C51 /* stGeofence.xcdatamodeld in Sources */,
+				270C01C923893A49006C2C51 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		270C01D823893A4B006C2C51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				270C01E123893A4B006C2C51 /* stGeofenceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		270C01DE23893A4B006C2C51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 270C01C223893A49006C2C51 /* stGeofence */;
+			targetProxy = 270C01DD23893A4B006C2C51 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		270C01CC23893A49006C2C51 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				270C01CD23893A49006C2C51 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		270C01D423893A4A006C2C51 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				270C01D523893A4A006C2C51 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		270C01E323893A4B006C2C51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		270C01E423893A4B006C2C51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		270C01E623893A4B006C2C51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H63JK63G6G;
+				INFOPLIST_FILE = stGeofence/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.stGeofence;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		270C01E723893A4B006C2C51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H63JK63G6G;
+				INFOPLIST_FILE = stGeofence/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.stGeofence;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		270C01E923893A4B006C2C51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H63JK63G6G;
+				INFOPLIST_FILE = stGeofenceTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.stGeofenceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/stGeofence.app/stGeofence";
+			};
+			name = Debug;
+		};
+		270C01EA23893A4B006C2C51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H63JK63G6G;
+				INFOPLIST_FILE = stGeofenceTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.stGeofenceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/stGeofence.app/stGeofence";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		270C01BE23893A49006C2C51 /* Build configuration list for PBXProject "stGeofence" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				270C01E323893A4B006C2C51 /* Debug */,
+				270C01E423893A4B006C2C51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		270C01E523893A4B006C2C51 /* Build configuration list for PBXNativeTarget "stGeofence" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				270C01E623893A4B006C2C51 /* Debug */,
+				270C01E723893A4B006C2C51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		270C01E823893A4B006C2C51 /* Build configuration list for PBXNativeTarget "stGeofenceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				270C01E923893A4B006C2C51 /* Debug */,
+				270C01EA23893A4B006C2C51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		270C01CF23893A49006C2C51 /* stGeofence.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				270C01D023893A49006C2C51 /* stGeofence.xcdatamodel */,
+			);
+			currentVersion = 270C01D023893A49006C2C51 /* stGeofence.xcdatamodel */;
+			path = stGeofence.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 270C01BB23893A49006C2C51 /* Project object */;
+}
