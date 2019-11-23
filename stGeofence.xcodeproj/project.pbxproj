@@ -15,6 +15,7 @@
 		270C01D323893A4A006C2C51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 270C01D223893A4A006C2C51 /* Assets.xcassets */; };
 		270C01D623893A4A006C2C51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 270C01D423893A4A006C2C51 /* LaunchScreen.storyboard */; };
 		270C01E123893A4B006C2C51 /* stGeofenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270C01E023893A4B006C2C51 /* stGeofenceTests.swift */; };
+		270C01ED23899432006C2C51 /* MGeofence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270C01EC23899431006C2C51 /* MGeofence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		270C01DC23893A4B006C2C51 /* stGeofenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = stGeofenceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		270C01E023893A4B006C2C51 /* stGeofenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stGeofenceTests.swift; sourceTree = "<group>"; };
 		270C01E223893A4B006C2C51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		270C01EC23899431006C2C51 /* MGeofence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGeofence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				270C01C623893A49006C2C51 /* AppDelegate.swift */,
 				270C01C823893A49006C2C51 /* SceneDelegate.swift */,
 				270C01CA23893A49006C2C51 /* ViewController.swift */,
+				270C01EB23899427006C2C51 /* Model */,
 				270C01CC23893A49006C2C51 /* Main.storyboard */,
 				270C01D223893A4A006C2C51 /* Assets.xcassets */,
 				270C01D423893A4A006C2C51 /* LaunchScreen.storyboard */,
@@ -100,6 +103,14 @@
 				270C01E223893A4B006C2C51 /* Info.plist */,
 			);
 			path = stGeofenceTests;
+			sourceTree = "<group>";
+		};
+		270C01EB23899427006C2C51 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				270C01EC23899431006C2C51 /* MGeofence.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +218,7 @@
 				270C01C723893A49006C2C51 /* AppDelegate.swift in Sources */,
 				270C01D123893A49006C2C51 /* stGeofence.xcdatamodeld in Sources */,
 				270C01C923893A49006C2C51 /* SceneDelegate.swift in Sources */,
+				270C01ED23899432006C2C51 /* MGeofence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
