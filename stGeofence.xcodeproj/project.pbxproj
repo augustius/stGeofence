@@ -20,6 +20,8 @@
 		270C01F3238A6AB9006C2C51 /* SSID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270C01F2238A6AB9006C2C51 /* SSID.swift */; };
 		270C01F7238A725D006C2C51 /* GeoFenceDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270C01F6238A725D006C2C51 /* GeoFenceDataSource.swift */; };
 		270C01F9238A74E9006C2C51 /* GeofenceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270C01F8238A74E9006C2C51 /* GeofenceViewModel.swift */; };
+		270C01FB238AAD70006C2C51 /* GeofenceViewModelUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270C01FA238AAD70006C2C51 /* GeofenceViewModelUnitTest.swift */; };
+		270C01FD238ADA32006C2C51 /* GeofenceViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270C01FC238ADA32006C2C51 /* GeofenceViewModelMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		270C01F2238A6AB9006C2C51 /* SSID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSID.swift; sourceTree = "<group>"; };
 		270C01F6238A725D006C2C51 /* GeoFenceDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoFenceDataSource.swift; sourceTree = "<group>"; };
 		270C01F8238A74E9006C2C51 /* GeofenceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceViewModel.swift; sourceTree = "<group>"; };
+		270C01FA238AAD70006C2C51 /* GeofenceViewModelUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceViewModelUnitTest.swift; sourceTree = "<group>"; };
+		270C01FC238ADA32006C2C51 /* GeofenceViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceViewModelMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				270C01E023893A4B006C2C51 /* stGeofenceTests.swift */,
+				270C01FA238AAD70006C2C51 /* GeofenceViewModelUnitTest.swift */,
+				270C01FC238ADA32006C2C51 /* GeofenceViewModelMock.swift */,
 				270C01E223893A4B006C2C51 /* Info.plist */,
 			);
 			path = stGeofenceTests;
@@ -268,6 +274,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				270C01FD238ADA32006C2C51 /* GeofenceViewModelMock.swift in Sources */,
+				270C01FB238AAD70006C2C51 /* GeofenceViewModelUnitTest.swift in Sources */,
 				270C01E123893A4B006C2C51 /* stGeofenceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

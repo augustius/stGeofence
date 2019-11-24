@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 import MapKit
 
-class GeofenceViewModel: NSObject, CLLocationManagerDelegate {
+class GeofenceViewModel: NSObject, CLLocationManagerDelegate, MKMapViewDelegate {
 
     // Core Location prevents any single app from monitoring more than 20 regions simultaneously
     // https://developer.apple.com/documentation/corelocation/monitoring_the_user_s_proximity_to_geographic_regions
@@ -18,12 +18,11 @@ class GeofenceViewModel: NSObject, CLLocationManagerDelegate {
 
     var addNewOverLay: ((_ geo: Geofence) -> Void)?
     var removeOverLay: ((_ geo: Geofence) -> Void)?
-    var showMessage: ((_ msg: String) -> Void)?
+    var showMessage: ((_  state: GeoState) -> Void)?
     var dataSource: GeoFenceDSProtocol = GeoFenceCoreDataSource()
+    var locationManager: CLLocationManager = CLLocationManager()
+    var geofences: [Geofence] = []
 
-    private var locationManager : CLLocationManager = CLLocationManager()
-    private var geofences: [Geofence] = []
-    private var currentEnterRegions: [CLRegion] = []
     private let annotationIdentifier = "GeofenceIdentifier"
 
     override init() {
@@ -31,7 +30,7 @@ class GeofenceViewModel: NSObject, CLLocationManagerDelegate {
         configureLocationManager()
     }
 
-    private func configureLocationManager() {
+    func configureLocationManager() {
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
@@ -39,7 +38,11 @@ class GeofenceViewModel: NSObject, CLLocationManagerDelegate {
 
     func fetchAllGeo() {
         geofences = dataSource.fetchAllGeoFence()
-        geofences.forEach({ addNewOverLay?($0) })
+        geofences.forEach({
+            addNewOverLay?($0)
+            locationManager.requestState(for: $0.toCLCircularRegion())
+            print($0)
+        })
     }
 
     func remove(_ geo: Geofence) {
@@ -62,56 +65,72 @@ class GeofenceViewModel: NSObject, CLLocationManagerDelegate {
         addNewOverLay?(geo)
         geofences.append(geo)
     }
-}
 
-extension GeofenceViewModel: MKMapViewDelegate {
-
-    func mapViewWillStartLocatingUser(_ mapView: MKMapView) {
-        showMessage?("mapViewWillStartLocatingUser")
-    }
-
-    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-        let sortedGeos = geofences.sortByClosest(userLocation.location).prefix(geoMonitoringLimit)
-        var sortedMonitoredGeos = locationManager.monitoredRegions.sortByFurthest(userLocation.location)
+    func decideWhichRegionToStartMonitoring(_ location: CLLocation) {
+        let sortedGeos = geofences.sortByClosest(location).prefix(geoMonitoringLimit)
+        var sortedMonitoredGeos = locationManager.monitoredRegions.sortByFurthest(location)
 
         sortedGeos.forEach({ geo in
-            if !sortedMonitoredGeos.contains(geo.toCLCircularRegion()) {
+            let notYetMonitored = !sortedMonitoredGeos.contains(geo.toCLCircularRegion())
+            if notYetMonitored {
                 let limitReach = !(locationManager.monitoredRegions.count < geoMonitoringLimit)
                 if limitReach {
                     if let lastRegion = sortedMonitoredGeos.last {
                         locationManager.stopMonitoring(for: lastRegion)
                         sortedMonitoredGeos.removeLast()
-                        print("\(lastRegion.identifier) stopMonitoring")
                     }
                 }
                 locationManager.startMonitoring(for: geo.toCLCircularRegion())
-                print("\(geo.locationName ?? "") startMonitoring")
-            } else {
-                print("\(geo.locationName ?? "") aldy Monitoring")
             }
         })
     }
 
-    func locationManager(_ manager: CLLocationManager, didStartMonitoringFor region: CLRegion) {
-        print("didStartMonitoringFor \(region.identifier)")
+    func decideWhetherExitRegionOrNot(_ region: CLRegion) {
+        guard
+            let circleRegion = region as? CLCircularRegion,
+            let geo = geofences.first(where: { $0.coordinate == circleRegion.center }),
+            let geoWifiName = geo.wifiName
+            else {
+                showMessage?(.outside(region))
+                return
+        }
+
+        let currentWifiInfos = dataSource.fetchNetworkInfo()
+        let allWifiName = currentWifiInfos.compactMap({ $0.ssid })
+        if !allWifiName.contains(geoWifiName) {
+            showMessage?(.outside(region))
+        } else {
+            startDelayToDecideWhetherExitRegionOrNot(region)
+        }
+    }
+
+    func startDelayToDecideWhetherExitRegionOrNot(_ region: CLRegion) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 30.0) { [weak self] in
+            self?.decideWhetherExitRegionOrNot(region)
+        }
+    }
+
+    // MARK: - MKMapViewDelegate
+    func locationManager(_ manager: CLLocationManager, didDetermineState state: CLRegionState, for region: CLRegion) {
+        switch state {
+        case .inside:
+            showMessage?(.inside(region))
+        case .outside, .unknown: break
+        }
+    }
+
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        if let location = userLocation.location {
+            decideWhichRegionToStartMonitoring(location)
+        }
     }
 
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        showMessage?("didEnterRegion \(region.identifier)")
+        showMessage?(.inside(region))
     }
 
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
-        if let circleRegion = region as? CLCircularRegion,
-            let geo = geofences.first(where: { $0.coordinate == circleRegion.center }),
-            let geoWifiName = geo.wifiName {
-            let currentWifiInfos = SSID.fetchNetworkInfo() ?? []
-            let allWifiName = currentWifiInfos.compactMap({ $0.ssid })
-            if !allWifiName.contains(geoWifiName) {
-                showMessage?("didExitRegion \(region.identifier)")
-            }
-        } else {
-            showMessage?("didExitRegion \(region.identifier)")
-        }
+        decideWhetherExitRegionOrNot(region)
     }
 
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -159,15 +178,3 @@ extension GeofenceViewModel: MKMapViewDelegate {
         }
     }
 }
-
-
-
-
-
-//extension GeofenceViewModel: CLLocationManagerDelegate {
-//
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//
-//    }
-//
-//}

@@ -18,6 +18,21 @@ struct GeofenceParam {
     var wifiName: String
 }
 
+enum GeoState {
+    case inside(CLRegion), outside(CLRegion)
+}
+
+extension GeoState {
+    func readableStatus() -> String {
+        switch self {
+        case .inside(let region):
+            return "INSIDE \(region.identifier)"
+        case .outside(let region):
+            return "OUTSIDE \(region.identifier)"
+        }
+    }
+}
+
 extension Geofence: MKAnnotation {
 
     public var coordinate: CLLocationCoordinate2D {
@@ -43,30 +58,22 @@ extension Geofence: MKAnnotation {
 
 extension Array where Element: Geofence {
 
-    func sortByClosest(_ location: CLLocation?) -> [Geofence] {
-        if let location = location {
-            return self.sorted { (firstGeo, secondGeo) -> Bool in
-                return firstGeo.coordinate.toCLLocation().distance(from: location) < secondGeo.coordinate.toCLLocation().distance(from: location)
-            }
-        } else {
-            return self
+    func sortByClosest(_ location: CLLocation) -> [Geofence] {
+        return self.sorted { (firstGeo, secondGeo) -> Bool in
+            return firstGeo.coordinate.toCLLocation().distance(from: location) < secondGeo.coordinate.toCLLocation().distance(from: location)
         }
     }
 }
 
 extension Set where Element: CLRegion {
 
-    func sortByFurthest(_ location: CLLocation?) -> [CLRegion] {
-        if let location = location {
-            return self.sorted { (firstGeo, secondGeo) -> Bool in
-                guard
-                    let firstGeoCircle = firstGeo as? CLCircularRegion,
-                    let secondGeoCircle = secondGeo as? CLCircularRegion
-                else { return false }
-                return firstGeoCircle.center.toCLLocation().distance(from: location) > secondGeoCircle.center.toCLLocation().distance(from: location)
-            }
-        } else {
-            return Array(self)
+    func sortByFurthest(_ location: CLLocation) -> [CLRegion] {
+        return self.sorted { (firstGeo, secondGeo) -> Bool in
+            guard
+                let firstGeoCircle = firstGeo as? CLCircularRegion,
+                let secondGeoCircle = secondGeo as? CLCircularRegion
+            else { return false }
+            return firstGeoCircle.center.toCLLocation().distance(from: location) > secondGeoCircle.center.toCLLocation().distance(from: location)
         }
     }
 }

@@ -51,8 +51,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
 
-    func showMessage(_ msg: String) {
-        textView.insertText("\n\(msg)")
+    func showMessage(_ state: GeoState) {
+        textView.insertText("\n\(state.readableStatus())")
     }
 
     // MARK: - IBAction Method
