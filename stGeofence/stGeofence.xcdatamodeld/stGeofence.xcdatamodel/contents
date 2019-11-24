@@ -5,8 +5,9 @@
         <attribute name="locationName" optional="YES" attributeType="String"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="radius" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="wifiName" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Geofence" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="Geofence" positionX="-63" positionY="-18" width="128" height="118"/>
     </elements>
 </model>

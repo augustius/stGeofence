@@ -22,36 +22,50 @@
                                     <outletCollection property="gestureRecognizers" destination="dSg-z6-LeM" appends="YES" id="am2-VK-VOu"/>
                                 </connections>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocv-J0-erb">
-                                <rect key="frame" x="364" y="50" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocv-J0-erb">
+                                <rect key="frame" x="364" y="150.5" width="30" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="8Xb-fH-IvU"/>
                                     <constraint firstAttribute="width" secondItem="ocv-J0-erb" secondAttribute="height" multiplier="1:1" id="PbJ-So-RLt"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <state key="normal" title="O"/>
+                                <color key="tintColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" backgroundImage="location.circle.fill" catalog="system"/>
                                 <connections>
                                     <action selector="currentLocationDidTap" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rg2-jC-C7Y"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aad-0L-Cto">
+                                <rect key="frame" x="50" y="762" width="314" height="100"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="6Go-30-mVX"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="3VM-Xv-4IS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1tt-2X-Hgn"/>
-                            <constraint firstItem="ocv-J0-erb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="50" id="PVC-Hz-yXd"/>
+                            <constraint firstItem="VeE-Pu-dcY" firstAttribute="trailing" secondItem="Aad-0L-Cto" secondAttribute="trailing" constant="50" id="M3K-Yy-f6B"/>
+                            <constraint firstItem="ocv-J0-erb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="150" id="PVC-Hz-yXd"/>
+                            <constraint firstItem="VeE-Pu-dcY" firstAttribute="bottom" secondItem="Aad-0L-Cto" secondAttribute="bottom" id="Ubd-J4-vGW"/>
                             <constraint firstItem="3VM-Xv-4IS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gVO-7R-WMx"/>
                             <constraint firstAttribute="trailing" secondItem="ocv-J0-erb" secondAttribute="trailing" constant="20" id="hnS-0O-InM"/>
                             <constraint firstAttribute="trailing" secondItem="3VM-Xv-4IS" secondAttribute="trailing" id="kAb-Cc-Z5M"/>
                             <constraint firstAttribute="bottom" secondItem="3VM-Xv-4IS" secondAttribute="bottom" id="nHG-Yy-bdy"/>
+                            <constraint firstItem="Aad-0L-Cto" firstAttribute="leading" secondItem="VeE-Pu-dcY" secondAttribute="leading" constant="50" id="nPy-Fy-A4k"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VeE-Pu-dcY"/>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="3VM-Xv-4IS" id="HVo-lf-qwT"/>
+                        <outlet property="textView" destination="Aad-0L-Cto" id="seX-s6-Say"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="1" id="dSg-z6-LeM">
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.59999999999999998" id="dSg-z6-LeM">
                     <connections>
                         <action selector="longPressTap:" destination="BYZ-38-t0r" id="A5e-w2-N4O"/>
                     </connections>
@@ -60,4 +74,7 @@
             <point key="canvasLocation" x="132" y="139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="location.circle.fill" catalog="system" width="64" height="60"/>
+    </resources>
 </document>

@@ -15,7 +15,11 @@
 		270C01D323893A4A006C2C51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 270C01D223893A4A006C2C51 /* Assets.xcassets */; };
 		270C01D623893A4A006C2C51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 270C01D423893A4A006C2C51 /* LaunchScreen.storyboard */; };
 		270C01E123893A4B006C2C51 /* stGeofenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270C01E023893A4B006C2C51 /* stGeofenceTests.swift */; };
-		270C01ED23899432006C2C51 /* MGeofence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270C01EC23899431006C2C51 /* MGeofence.swift */; };
+		270C01ED23899432006C2C51 /* Geofence+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270C01EC23899431006C2C51 /* Geofence+Extension.swift */; };
+		270C01F1238A63A9006C2C51 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270C01F0238A63A9006C2C51 /* ExternalAccessory.framework */; };
+		270C01F3238A6AB9006C2C51 /* SSID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270C01F2238A6AB9006C2C51 /* SSID.swift */; };
+		270C01F7238A725D006C2C51 /* GeoFenceDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270C01F6238A725D006C2C51 /* GeoFenceDataSource.swift */; };
+		270C01F9238A74E9006C2C51 /* GeofenceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270C01F8238A74E9006C2C51 /* GeofenceViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +45,12 @@
 		270C01DC23893A4B006C2C51 /* stGeofenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = stGeofenceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		270C01E023893A4B006C2C51 /* stGeofenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stGeofenceTests.swift; sourceTree = "<group>"; };
 		270C01E223893A4B006C2C51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		270C01EC23899431006C2C51 /* MGeofence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGeofence.swift; sourceTree = "<group>"; };
+		270C01EC23899431006C2C51 /* Geofence+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Geofence+Extension.swift"; sourceTree = "<group>"; };
+		270C01EE238A63A8006C2C51 /* stGeofenceDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = stGeofenceDebug.entitlements; sourceTree = "<group>"; };
+		270C01F0238A63A9006C2C51 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		270C01F2238A6AB9006C2C51 /* SSID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSID.swift; sourceTree = "<group>"; };
+		270C01F6238A725D006C2C51 /* GeoFenceDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoFenceDataSource.swift; sourceTree = "<group>"; };
+		270C01F8238A74E9006C2C51 /* GeofenceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeofenceViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				270C01F1238A63A9006C2C51 /* ExternalAccessory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +78,7 @@
 				270C01C523893A49006C2C51 /* stGeofence */,
 				270C01DF23893A4B006C2C51 /* stGeofenceTests */,
 				270C01C423893A49006C2C51 /* Products */,
+				270C01EF238A63A9006C2C51 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,9 +94,13 @@
 		270C01C523893A49006C2C51 /* stGeofence */ = {
 			isa = PBXGroup;
 			children = (
+				270C01EE238A63A8006C2C51 /* stGeofenceDebug.entitlements */,
 				270C01C623893A49006C2C51 /* AppDelegate.swift */,
 				270C01C823893A49006C2C51 /* SceneDelegate.swift */,
 				270C01CA23893A49006C2C51 /* ViewController.swift */,
+				270C01F2238A6AB9006C2C51 /* SSID.swift */,
+				270C01F5238A7232006C2C51 /* DataSource */,
+				270C01F4238A7212006C2C51 /* ViewModel */,
 				270C01EB23899427006C2C51 /* Model */,
 				270C01CC23893A49006C2C51 /* Main.storyboard */,
 				270C01D223893A4A006C2C51 /* Assets.xcassets */,
@@ -108,9 +123,33 @@
 		270C01EB23899427006C2C51 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				270C01EC23899431006C2C51 /* MGeofence.swift */,
+				270C01EC23899431006C2C51 /* Geofence+Extension.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		270C01EF238A63A9006C2C51 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				270C01F0238A63A9006C2C51 /* ExternalAccessory.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		270C01F4238A7212006C2C51 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				270C01F8238A74E9006C2C51 /* GeofenceViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		270C01F5238A7232006C2C51 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				270C01F6238A725D006C2C51 /* GeoFenceDataSource.swift */,
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,9 +255,12 @@
 			files = (
 				270C01CB23893A49006C2C51 /* ViewController.swift in Sources */,
 				270C01C723893A49006C2C51 /* AppDelegate.swift in Sources */,
+				270C01F9238A74E9006C2C51 /* GeofenceViewModel.swift in Sources */,
 				270C01D123893A49006C2C51 /* stGeofence.xcdatamodeld in Sources */,
 				270C01C923893A49006C2C51 /* SceneDelegate.swift in Sources */,
-				270C01ED23899432006C2C51 /* MGeofence.swift in Sources */,
+				270C01F7238A725D006C2C51 /* GeoFenceDataSource.swift in Sources */,
+				270C01F3238A6AB9006C2C51 /* SSID.swift in Sources */,
+				270C01ED23899432006C2C51 /* Geofence+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +420,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = stGeofence/stGeofenceDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H63JK63G6G;
 				INFOPLIST_FILE = stGeofence/Info.plist;
